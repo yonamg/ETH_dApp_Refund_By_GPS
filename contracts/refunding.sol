@@ -23,3 +23,20 @@ struct EmployeeDetail {
      function getOwner() public view returns (address) {
         return owner;
     }
+
+    function createEmployee(address empAddress, string memory _name, uint256 _latitude, uint256 _longitude, uint256 _allowedDistance, uint256 _amount) public {
+        // restrict employee creation to owner
+        require(msg.sender == owner);
+        // set Employee name using the employeeDetail mapping
+        employeeDetail[empAddress].name = _name; 
+        // set Employee latitude using the EmployeeDetail struct mapping
+        employeeDetail[empAddress].latitude = _latitude;
+        // set Employee longitude using the employeeDetail struct mapping
+        employeeDetail[empAddress].longitude = _longitude;
+        // set the Employee's allowed distance using the employeeDetail struct mapping
+        employeeDetail[empAddress].allowedDistance = _allowedDistance;
+        // set the amount using the employeeDetail struct mapping
+        employeeDetail[empAddress].amount = _amount;
+        // push user address into userAddresses array
+        employees.push(empAddress);
+    }
