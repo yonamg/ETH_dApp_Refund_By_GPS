@@ -10,3 +10,12 @@ struct EmployeeDetail {
         uint256 allowedDistance;
         uint256 amount;
     }
+
+    mapping (address => EmployeeDetail) employeeDetail;
+    mapping (address => bool) public employeeCondition;
+    address[] public employees;
+
+    constructor() {
+        owner = msg.sender;
+        console.log("Deploying a Refund with Owner:", owner);
+    }
