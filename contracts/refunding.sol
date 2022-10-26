@@ -2,7 +2,10 @@
 pragma solidity >=0.6.0 <0.9.0;
 
 
-//import "hardhat/console.sol";
+import "hardhat/console.sol";
+
+contract Refund {
+    address owner;
 struct EmployeeDetail { 
         string name; 
         uint256 latitude;
@@ -74,3 +77,12 @@ struct EmployeeDetail {
         }
         return y;
     }
+
+     function calculateDistance(uint256 lat, uint256 lon) public view returns (uint256 dist)
+    {
+        (,uint256 lat1, uint256 lon1, ,) = getEmployeeDetail(msg.sender);
+
+        uint256 distance = uint256(sqrt((lat - lat1) ** 2 + (lon - lon1) ** 2));
+        return uint256(distance);
+    }
+}
