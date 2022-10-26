@@ -19,3 +19,7 @@ struct EmployeeDetail {
         owner = msg.sender;
         console.log("Deploying a Refund with Owner:", owner);
     }
+
+     function getOwner() public view returns (address) {
+        return owner;
+    }
