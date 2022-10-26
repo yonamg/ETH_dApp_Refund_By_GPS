@@ -54,3 +54,12 @@ struct EmployeeDetail {
      function getEmployees() public view returns (address[] memory) {
         return employees;
     }
+    function ingestCoordinate(uint256 latitude, uint256 longitude, uint256 etimestamp) public  {
+       require(etimestamp >= 0 && etimestamp <= 86400);
+       uint256 distance = calculateDistance(latitude, longitude);
+       if (distance > employeeDetail[msg.sender].allowedDistance) {
+           employeeCondition[msg.sender] = false;
+       } else {
+           employeeCondition[msg.sender] = true;
+       }
+    }
