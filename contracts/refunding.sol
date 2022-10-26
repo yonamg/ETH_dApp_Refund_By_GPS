@@ -50,3 +50,7 @@ struct EmployeeDetail {
             employeeDetail[empAddress].amount
             );
     }
+
+     function getEmployees() public view returns (address[] memory) {
+        return employees;
+    }
