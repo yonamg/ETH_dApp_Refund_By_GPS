@@ -40,3 +40,13 @@ struct EmployeeDetail {
         // push user address into userAddresses array
         employees.push(empAddress);
     }
+
+     function getEmployeeDetail(address empAddress) public view returns (string memory, uint256, uint256, uint256, uint256) {
+        return (
+            employeeDetail[empAddress].name, 
+            employeeDetail[empAddress].latitude, 
+            employeeDetail[empAddress].longitude, 
+            employeeDetail[empAddress].allowedDistance,
+            employeeDetail[empAddress].amount
+            );
+    }
