@@ -21,3 +21,10 @@
     margin-right: 16px;
     border-radius: 16px;
   }
+  input {
+    font-size: 12px;
+    padding: 10px;
+    border-radius: 5px; 
+    align-items: center;
+    justify-content: center; 
+  }
