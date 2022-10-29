@@ -67,4 +67,18 @@ const {
                   "You can't withdraw yet"
                 );
               });
+
+              it("Should revert with the right error if called from another account", async function () {
+                const { lock, unlockTime, otherAccount } = await loadFixture(
+                  deployOneYearLockFixture
+                );
+        
+                // We can increase the time in Hardhat Network
+                await time.increaseTo(unlockTime);
+        
+                // We use lock.connect() to send a transaction from another account
+                await expect(lock.connect(otherAccount).withdraw()).to.be.revertedWith(
+                  "You aren't the owner"
+                );
+              });
   
