@@ -41,3 +41,10 @@
   padding: 24px;
   margin-bottom: 64px;
 }
+.greeting {
+  color: red;
+}
+
+.box{
+  margin-bottom: 10px;
+}
