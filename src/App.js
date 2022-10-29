@@ -24,3 +24,7 @@ function App() {
     list.splice(index, 1);
     setInputList(list);
   };
+
+  const handleAddClick = () => {
+    setInputList([...inputList, { EmpName: "", publicAddress: "" }]);
+  };
