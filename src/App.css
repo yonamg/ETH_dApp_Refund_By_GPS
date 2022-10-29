@@ -35,3 +35,9 @@
   margin-top: 20;
   color: wheat;
 }
+.description {
+  background-color: darkgray;
+  border-radius: 24px;
+  padding: 24px;
+  margin-bottom: 64px;
+}
