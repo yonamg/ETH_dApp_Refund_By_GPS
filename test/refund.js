@@ -24,4 +24,11 @@ const {
   
       return { lock, unlockTime, lockedAmount, owner, otherAccount };
     }
+
+    describe("Deployment", function () {
+        it("Should set the right unlockTime", async function () {
+          const { lock, unlockTime } = await loadFixture(deployOneYearLockFixture);
+    
+          expect(await lock.unlockTime()).to.equal(unlockTime);
+        });
   
