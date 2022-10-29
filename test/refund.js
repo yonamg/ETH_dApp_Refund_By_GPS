@@ -37,4 +37,14 @@ const {
       
             expect(await lock.owner()).to.equal(owner.address);
           });
+
+          it("Should receive and store the funds to lock", async function () {
+            const { lock, lockedAmount } = await loadFixture(
+              deployOneYearLockFixture
+            );
+      
+            expect(await ethers.provider.getBalance(lock.address)).to.equal(
+              lockedAmount
+            );
+          });
   
