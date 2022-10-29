@@ -14,6 +14,7 @@ The project requires the following: Node.JS
 ## Installation
 
 git clone https://github.com/yonamg/ETH_dApp_Refund_By_GPS
+
 cd ETH_dApp_Refund_By_GPS 
 npx hardhat node
 npx hardhat run scripts/deploy.js --network localhost
