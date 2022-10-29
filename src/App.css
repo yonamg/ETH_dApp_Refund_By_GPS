@@ -53,3 +53,11 @@
   display: inline-block;
   font-size: 14px; 
 }
+.ml10 {
+  margin-left: 10px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+.mr10 {
+  margin-right: 10px;
+}
