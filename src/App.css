@@ -48,3 +48,8 @@
 .box{
   margin-bottom: 10px;
 }
+.btn-box {
+  margin-left: 10px; 
+  display: inline-block;
+  font-size: 14px; 
+}
